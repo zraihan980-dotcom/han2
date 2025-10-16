@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Lengkap & Promo Spesial | R&Q Drink</title> 
+    <style>
+        /* Gaya Dasar dan Variabel Warna Brand (DISESUAIKAN UNTUK R&Q) */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            /* background-color: #F8F4F1; -- Ini akan diganti oleh background-image */
+            color: #333; /* Warna teks umum */
+
+            /* --- Perubahan untuk Background Doodle --- */
+            background-image: url('doodle_bg.png');
+            background-repeat: repeat; /* Agar gambar doodle mengulang */
+            background-color: #F8F4F1; /* Warna fallback jika gambar tidak dimuat */
+            background-size: 150px; /* Ukuran doodle, sesuaikan sesuai keinginan */
+            /* ------------------------------------- */
+        }
+        
+        :root {
+            --rq-dark: #262626; 
+            --rq-light: #F8F4F1; 
+            --rq-accent: #6C5B7B; 
+        }
+
+        /* HEADER & LOGO */
+        header {
+            background-color: rgba(248, 244, 241, 0.9); /* Ubah ke rgba agar sedikit transparan di atas doodle */
+            color: var(--rq-dark);
+            padding: 15px 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            border-bottom: 3px solid var(--rq-dark); 
+            text-align: center;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        /* Styling untuk Gambar Logo R&Q */
+        .rq-logo-img {
+            height: 80px; 
+            width: auto; 
+            box-shadow: none; 
+        }
+
+        /* Styling Teks Judul */
+        .brand-name-text { 
+            font-family: 'Arial', sans-serif; 
+            font-size: 2.2em; 
+            color: var(--rq-dark); 
+            background-color: transparent; 
+            padding: 0; 
+            border: none; 
+            letter-spacing: 1px;
+            margin: 0;
+            text-shadow: none; 
+            font-weight: bold; 
+        }
+        
+        /* Navigasi */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: var(--rq-dark); 
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            padding-bottom: 5px;
+            transition: border-bottom 0.3s;
+        }
+
+        nav ul li a:hover {
+            border-bottom: 3px solid var(--rq-accent); 
+        }
+
+        /* HERO SECTION */
+        .hero {
+            /* background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://via.placeholder.com/1200x500?text=R%26Q+Drink+Background+Image'); */
+            /* Kita ingin latar belakang hero agak transparan juga untuk melihat doodle di belakangnya */
+            background-color: rgba(0, 0, 0, 0.3); /* Latar belakang semi-transparan */
+            background-size: cover; /* Untuk gambar placeholder, jika ada */
+            background-position: center;
+            color: var(--rq-light); 
+            text-align: center;
+            padding: 100px 20px;
+            min-height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero h2 {
+            font-size: 3.5em;
+            margin: 0 0 15px;
+            text-shadow: 2px 2px var(--rq-dark);
+        }
+
+        .hero p {
+            font-size: 1.4em;
+            margin: 0 0 30px;
+            text-shadow: 1px 1px var(--rq-dark);
+        }
+
+        .cta-button {
+            background-color: var(--rq-accent); 
+            color: var(--rq-light);
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.4em;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background-color 0.3s, transform 0.2s;
+            border: 2px solid var(--rq-light);
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background-color: #8D7B97; 
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+        
+        /* DAFTAR MENU LENGKAP */
+        .menu-detail {
+            padding: 60px 5%;
+            text-align: center;
+        /* Ubah ini */
+            background-color: transparent; /* Sekarang transparan penuh */
+        /* background-color: rgba(248, 244, 241, 0.9); */
+}
+
+        .menu-detail h3 {
+            font-size: 2.8em;
+            color: var(--rq-dark);
+            margin-bottom: 50px;
+            display: inline-block;
+            border-bottom: 3px solid var(--rq-accent);
+            padding-bottom: 10px;
+        }
+
+        .menu-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .menu-category {
+            flex: 1 1 45%; 
+            min-width: 300px;
+            text-align: left;
+            padding: 25px;
+            border: 1px solid #ccc; 
+            border-radius: 10px;
+            background-color: rgba(248, 244, 241, 0.95); /* Sedikit transparan */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .menu-category h4 {
+            color: var(--rq-dark);
+            font-size: 2em;
+            border-bottom: 2px solid var(--rq-accent);
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 10px 0;
+            border-bottom: 1px dotted #999;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-name {
+            font-weight: bold;
+            color: var(--rq-dark);
+            font-size: 1.15em;
+            flex-grow: 1;
+        }
+
+        .item-description {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        .item-price {
+            font-weight: 900;
+            color: var(--rq-dark);
+            font-size: 1.15em;
+            white-space: nowrap;
+            margin-left: 15px;
+        }
+
+        /* Bagian Promo */
+        .promo-section {
+            background-color: rgba(108, 91, 123, 0.9); /* Sedikit transparan */
+            color: var(--rq-light);
+            padding: 50px 20px;
+            text-align: center;
+            margin-top: 50px;
+            border-top: 3px dashed var(--rq-dark);
+            border-bottom: 3px dashed var(--rq-dark);
+        }
+
+        .promo-section h3 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .promo-section .highlight {
+            font-size: 3.2em;
+            font-weight: 900;
+            color: var(--rq-dark); 
+            display: block;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px var(--rq-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--rq-dark);
+            color: var(--rq-light);
+            text-align: center;
+            padding: 30px 0;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <img src="rq_logo.png" alt="R&Q Drink Logo" class="rq-logo-img">
+            <h1 class="brand-name-text">R&Q DRINK</h1> 
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#menu-lengkap">Daftar Minuman</a></li>
+                <li><a href="#promo">Promo Spesial</a></li>
+                <li><a href="#pesan">Pesan Sekarang</a></li>
+                <li><a href="#tentang">Tentang Kami</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>SEGARNYA R&Q DRINK</h2>
+            <p>Nikmati Berbagai Pilihan Minuman Segar dan Inovatif.<br>Pelepas Dahaga Terbaikmu!</p>
+            <a href="#menu-lengkap" class="cta-button">LIHAT MENU LENGKAP</a>
+        </section>
+
+        <section id="promo" class="promo-section">
+            <h3>PROMO SPESIAL BULAN INI!</h3>
+            <span class="highlight">BELI 2 GRATIS 1 UNTUK SEMUA VARIAN TEA!*</span>
+            <p>Berlaku untuk pembelian langsung di toko atau via aplikasi.<br>Jangan sampai ketinggalan!</p>
+            <a href="#pesan" class="cta-button" style="background-color: var(--rq-light); color: var(--rq-accent); border: none;">KLAIM PROMO SEKARANG!</a>
+        </section>
+        
+        <section id="menu-lengkap" class="menu-detail">
+            <h3>DAFTAR MINUMAN KAMI</h3>
+            <div class="menu-grid">
+
+                <div class="menu-category">
+                    <h4>FRESH TEA</h4>
+                    <div class="menu-item">
+                        <div class="item-name">Classic Black Tea</div>
+                        <div class="item-price">Mulai Rp 18.000</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">Jasmine Green Tea</div>
+                        <div class="item-price">Mulai Rp 18.000</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">Lychee Tea</div>
+                        <div class="item-description">Dengan buah lychee asli.</div>
+                        <div class="item-price">Mulai Rp 22.000</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">Lemon Tea Segar</div>
+                        <div class="item-price">Mulai Rp 20.000</div>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <h4>MILK & CREAMY</h4>
+                    <div class="menu-item">
+                        <div class="item-name">Brown Sugar Fresh Milk</div>
+                        <div class="item-description">Manisnya pas dengan boba kenyal.</div>
+                        <div class="item-price">Mulai Rp 28.000</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">Matcha Latte Cream</div>
+                        <div class="item-description">Matcha premium dengan *cream cheese*.</div>
+                        <div class="item-price">Mulai Rp 32.000</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">Chocolate Hazelnut</div>
+                        <div class="item-price">Mulai Rp 28.000</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">Taro Milk</div>
+                        <div class="item-description">Creamy taro yang lembut.</div>
+                        <div class="item-price">Mulai Rp 25.000</div>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <h4>COFFEE & ESPRESSO</h4>
+                    <div class="menu-item">
+                        <div class="item-name">Es Kopi Susu Aren</div>
+                        <div class="item-price">Mulai Rp 25.000</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">Caramel Macchiato</div>
+                        <div class="item-price">Mulai Rp 30.000</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">Americano Dingin</div>
+                        <div class="item-price">Mulai Rp 22.000</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">Vanilla Latte</div>
+                        <div class="item-price">Mulai Rp 28.000</div>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <h4>SPECIAL BLENDS</h4>
+                    <div class="menu-item">
+                        <div class="item-name">Strawberry Yakult</div>
+                        <div class="item-description">Perpaduan manis dan asam yang menyegarkan.</div>
+                        <div class="item-price">Mulai Rp 27.000</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">Mango Smoothies</div>
+                        <div class="item-price">Mulai Rp 30.000</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">Avocado Coffee Float</div>
+                        <div class="item-description">Alpukat blender dengan kopi dan es krim.</div>
+                        <div class="item-price">Mulai Rp 35.000</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">Sparkling Lychee</div>
+                        <div class="item-price">Mulai Rp 28.000</div>
+                    </div>
+                </div>
+            </div>
+            <p style="margin-top: 40px; font-size: 0.9em;">*Harga dapat bervariasi tergantung lokasi dan promo yang berlaku.</p>
+        </section>
+
+        <section id="tentang" class="promo-section"> 
+            <h3>TENTANG R&Q DRINK</h3>
+            <p>R&Q Drink hadir untuk menyajikan inovasi minuman yang berkualitas tinggi.<br>Kami berkomitmen untuk menggunakan bahan-bahan segar pilihan untuk setiap sajian.</p>
+            <p>Follow kami di Instagram: <span class="highlight" style="font-size: 1.5em; display: inline;">@RQDrinkOfficial</span></p>
+        </section>
+    </main>
+
+    <footer id="pesan">
+        <p>PESAN SEKARANG: **0812-3456-7890** (WhatsApp) | Tersedia di Aplikasi Ojol Favoritmu</p>
+        <p>&copy; 2024 R&Q Drink. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
